@@ -1,0 +1,25 @@
+#3-7-26
+#Alexander Kazantzis
+#PS11P1
+
+#function that format's name Last name, initial of first name
+#For Example Alexander Kazantzis becomes Kazantzis A
+
+def FrmtNme():
+    
+    while True:
+        Full_Name = input("Enter your First and last name: ")
+        Name_Prts = Full_Name.split()
+        #Validate the Input, We need their First and Last name
+        if len(Name_Prts) == 2 and all(Name_Prt.isalpha() for Name_Prt in Name_Prts):
+            Fst_Name = Name_Prts[0]
+            Lst_Name = Name_Prts[1]
+            #Format the name like this, Lstnme.F 
+            FrmtdNme =f"{Lst_Name.capitalize()}, {Fst_Name[0].capitalize()}."
+            print(f"Formatted Name: {FrmtdNme}") 
+            break
+        else:
+            print("Invalid input. Please enter exactly two names, That have only letters.")
+            print("For Example: John Doe")
+if __name__ == "__main__":
+    FrmtNme()
