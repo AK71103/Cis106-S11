@@ -1,0 +1,19 @@
+#3-8-26
+#Alexander Kazantzis
+#PS11P3
+
+def CSVLine():
+    #User Input
+    UsrInpt= input("Enter a Line of Comma seperated Values: ")
+    
+    #Comma seperated words
+    CSVWords = [CSVWord.strip() for CSVWord in UsrInpt.split(',')]
+    
+    #Print each word seperately
+    print("\nSplit Words: ")
+    for CSVWord in CSVWords:
+        if CSVWord:
+            print(CSVWord)
+    
+if __name__ == "__main__":
+    CSVLine()
