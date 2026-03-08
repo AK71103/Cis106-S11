@@ -1,0 +1,27 @@
+#3-7-26
+#Alexander Kazantzis
+#PS11P2
+
+def UsrInpt():
+    #this is form the main text
+    NrmTxt= input("Enter a line of text: ")
+    return NrmTxt
+def Spacing(NrmTxt):
+    #gets rid of leading,trailing, and duplicate spaces
+    ClnWrds= NrmTxt.split()
+    ClnTxt= " ".join(ClnWrds)
+    return ClnTxt
+def RevText(ClnTxt):
+    RevTxt = ClnTxt [::-1]
+    return RevTxt
+def Output(RevTxt):
+    print(f"the Text Reversed: {RevTxt}") 
+if __name__ == "__main__":
+    #1 enter the text
+    NrmLine = UsrInpt()
+    #2 proper spacing
+    ClnLine = Spacing(NrmLine)
+    #3 reverse the text
+    RevLine = RevText(ClnLine)
+    #4 display the result
+    Output(RevLine)
