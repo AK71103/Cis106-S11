@@ -1,0 +1,47 @@
+#3-8-26
+#Alexander Kazantzis
+#PS11P4
+import time
+import sys
+
+def scroll_text_program():
+    # 1. Get user input
+    line_of_text = input("Enter a line of text: ")
+    chars_per_line = int(input("Enter the number of characters to print in each line: "))
+    num_lines = int(input("Enter the number of lines to be printed: "))
+    scroll_direction = input("Enter scroll direction (right or left): ").lower()
+
+    # 2. Duplicate text to fill the required character length
+    # Use integer division and modulus for robust duplication
+    full_text_length = chars_per_line + len(line_of_text) # Ensure enough text for seamless scroll
+    duplicated_text = (line_of_text * (full_text_length // len(line_of_text) + 1))[:full_text_length]
+
+    # Initial position
+    start_index = 0
+
+    # 3. Print the requested number of lines, shifting the content each time
+    for _ in range(num_lines):
+        # Determine the current line's content based on start_index and chars_per_line
+        current_line = duplicated_text[start_index : start_index + chars_per_line]
+        
+        # In a console environment, you can use carriage return to overwrite the same line for an animation effect, 
+        # or simply print a new line each time to meet the prompt's request for "print the requested number of lines"
+        print(current_line) 
+
+        # Shift the index for the next line
+        if scroll_direction == "left":
+            start_index = (start_index + 1) % len(duplicated_text)
+        elif scroll_direction == "right":
+            start_index = (start_index - 1) % len(duplicated_text)
+        else:
+            print(f"Invalid scroll direction: {scroll_direction}. Defaulting to left shift.")
+            start_index = (start_index + 1) % len(duplicated_text)
+        
+        # Optional: Add a small delay for better readability as a scrolling effect
+        # time.sleep(0.1) # Uncomment this to slow down the output
+
+    print("\nScrolling finished.")
+
+# Run the program
+if __name__ == "__main__":
+    scroll_text_program()
