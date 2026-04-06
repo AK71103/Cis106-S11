@@ -1,4 +1,4 @@
-# Cis106-S1
+# Cis106-S11
 Write the code for the following problems. Use separate functions for input, each type of processing, and output. Avoid global variables by passing parameters and returning results. Create test data to validate the accuracy of each program. Add comments at the top of the program and include references to any resources used.
 Create a program that asks the user for a single line of text containing a first name and last name, such as Firstname Lastname. Use string functions/methods to parse the line and print out the name in the form last name, first initial, such as Lastname, F. Include a trailing period after the first initial. Handle invalid input errors, such as extra spaces or missing name parts.
 
